@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Profissional de Desenvolvimento Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Guia Profissional de Desenvolvimento Web</h1>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#guias">Guias</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Aprenda desenvolvimento web de forma profissional</h2>
+                <p>Um guia completo para iniciar sua jornada como desenvolvedor web</p>
+                <button class="btn-primary">Começar</button>
+            </div>
+        </section>
+
+        <section class="cards" id="guias">
+            <div class="container">
+                <div class="card">
+                    <h3>HTML</h3>
+                    <p>A linguagem de marcação que estrutura todo conteúdo web</p>
+                    <pre><code>&lt;section class="hero"&gt;
+    &lt;h1&gt;Título&lt;/h1&gt;
+&lt;/section&gt;</code></pre>
+                </div>
+                
+                <div class="card">
+                    <h3>CSS</h3>
+                    <p>Estilização e layout para suas páginas web</p>
+                    <pre><code>.hero {
+    display: flex;
+    min-height: 100vh;
+}</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3>JavaScript</h3>
+                    <p>Programação dinâmica para interatividade</p>
+                    <pre><code>function toggleTheme() {
+    document.body.classList
+        .toggle('dark');
+}</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guia Dev Web. Todos os direitos reservados.</p>
+            <div class="theme-switch">
+                <button id="themeToggle">Alternar Tema</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
