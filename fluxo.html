@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo de Projeto — Guia Profissional de Desenvolvimento Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Guia Profissional de Desenvolvimento Web — Tiago Barbosa</h1>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Fluxograma de um Projeto Web</h2>
+                <p>Clique em uma etapa para ver entregáveis e riscos.</p>
+            </div>
+        </section>
+
+        <section class="flow container">
+            <svg width="100%" height="220" viewBox="0 0 1200 220" role="img" aria-label="Fluxograma">
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+                        <path d="M0,0 L10,5 L0,10 z" style="fill:var(--primary)" />
+                    </marker>
+                </defs>
+                <!-- Boxes -->
+                <rect x="20" y="20" width="150" height="60" rx="6" class="flow-box" data-step="Descoberta"></rect>
+                <text x="95" y="55" text-anchor="middle" fill="#fff">Descoberta</text>
+
+                <rect x="210" y="20" width="150" height="60" rx="6" class="flow-box" data-step="Requisitos"></rect>
+                <text x="285" y="55" text-anchor="middle" fill="#fff">Requisitos</text>
+
+                <line x1="170" y1="50" x2="210" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+                <rect x="400" y="20" width="150" height="60" rx="6" class="flow-box" data-step="Protótipo"></rect>
+                <text x="475" y="55" text-anchor="middle" fill="#fff">Protótipo</text>
+
+                <line x1="360" y1="50" x2="400" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+                <rect x="590" y="20" width="150" height="60" rx="6" class="flow-box" data-step="Design"></rect>
+                <text x="665" y="55" text-anchor="middle" fill="#fff">Design</text>
+
+                <line x1="550" y1="50" x2="590" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+                <rect x="780" y="20" width="150" height="60" rx="6" class="flow-box" data-step="Implementação"></rect>
+                <text x="855" y="55" text-anchor="middle" fill="#fff">Implementação</text>
+
+                <line x1="740" y1="50" x2="780" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+                <rect x="970" y="20" width="150" height="60" rx="6" class="flow-box" data-step="Testes"></rect>
+                <text x="1045" y="55" text-anchor="middle" fill="#fff">Testes</text>
+
+                <line x1="930" y1="50" x2="970" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+            </svg>
+
+            <div class="timeline">
+                <div class="timeline-step" data-step="Descoberta">Descoberta</div>
+                <div class="timeline-step" data-step="Requisitos">Requisitos</div>
+                <div class="timeline-step" data-step="Protótipo">Protótipo</div>
+                <div class="timeline-step" data-step="Design">Design</div>
+                <div class="timeline-step" data-step="Implementação">Implementação</div>
+                <div class="timeline-step" data-step="Testes">Testes</div>
+            </div>
+
+            <div id="flowTooltip" class="tooltip" role="status" aria-hidden="true"></div>
+            <div class="flow-details container" aria-live="polite">
+                <h3 id="flowTitle">Clique em uma etapa</h3>
+                <p id="flowDesc">Cada etapa mostra o que entregar e os riscos mais comuns de forma simples.</p>
+                <ul>
+                    <li><strong>Descoberta:</strong> entender o problema e o público. Entregáveis: notas de pesquisa, metas.
+                    <li><strong>Requisitos:</strong> definir o que o site precisa fazer. Entregáveis: lista de funcionalidades, critérios de aceitação.
+                    <li><strong>Protótipo:</strong> esboçar telas e fluxos. Entregáveis: wireframes e protótipos clicáveis.
+                    <li><strong>Design:</strong> criar aparência e interação. Entregáveis: mockups, guia de estilos.
+                    <li><strong>Implementação:</strong> escrever código e integrar. Entregáveis: código, testes básicos.
+                    <li><strong>Testes:</strong> validar o produto com usuários e correções. Entregáveis: relatórios de bugs e ajustes.
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guia Dev Web. Todos os direitos reservados.</p>
+            <div class="theme-switch">
+                <button id="themeToggle">Alternar Tema</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

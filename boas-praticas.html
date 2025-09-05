@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas Práticas — Guia Profissional de Desenvolvimento Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Guia Profissional de Desenvolvimento Web — Tiago Barbosa</h1>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Boas Práticas Profissionais</h2>
+                <p>Dicas e padrões para escrever código limpo e acessível.</p>
+            </div>
+        </section>
+
+        <section class="accordion container" id="practices">
+            <article class="accordion-item">
+                <h3 class="accordion-title">Semântica & Acessibilidade</h3>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Use landmarks (header, nav, main, footer) para orientar leitores de tela.</li>
+                        <li>Forneça alt descritivo em imagens que transmitam informação.</li>
+                        <li>Use labels associados a inputs e roles quando necessário.</li>
+                        <li>Garanta foco visível e ordem de tabulação coerente.</li>
+                    </ul>
+                    <pre><code>&lt;header&gt;
+  &lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;&lt;h1&gt;Título&lt;/h1&gt;&lt;/article&gt;
+&lt;/main&gt;</code></pre>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h3 class="accordion-title">Responsividade</h3>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Adote mobile-first: escreva estilos base para mobile e aumente para telas maiores.</li>
+                        <li>Use Flexbox e Grid para layouts adaptáveis.</li>
+                        <li>Prefira unidades relativas (rem, %) e imagens responsivas (max-width:100%).</li>
+                    </ul>
+                    <pre><code>/* mobile-first */
+.grid { display: grid; grid-template-columns: 1fr }
+@media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr } }</code></pre>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h3 class="accordion-title">Organização de CSS</h3>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Use convenção (ex: BEM) para previsibilidade.</li>
+                        <li>Extraia variáveis CSS para cores, espaçamentos e tipografia.</li>
+                        <li>Separe componentes em blocos e evite seletores muito específicos.</li>
+                    </ul>
+                    <pre><code>/* Exemplo BEM */
+.card { }
+.card__title { font-weight: 600 }
+.card--highlight { border-color: var(--primary) }</code></pre>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h3 class="accordion-title">Performance leve</h3>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Otimize imagens (WebP, compressão) e use width/height para evitar reflow.</li>
+                        <li>Lazy-load de imagens abaixo da dobra.</li>
+                        <li>Evite executar scripts pesados no carregamento inicial.</li>
+                    </ul>
+                    <pre><code>&lt;img src="foto.webp" loading="lazy" alt="Descrição" width="800" height="600"&gt;</code></pre>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h3 class="accordion-title">Versionamento (Git)</h3>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Commits pequenos e com mensagens descritivas (feat:, fix:, docs:).</li>
+                        <li>Use branches para features e pull requests para revisão.</li>
+                        <li>Inclua .gitignore e não comite credenciais.</li>
+                    </ul>
+                    <pre><code>git checkout -b feat/filtro-tecnologias
+git add .
+git commit -m "feat: filtro por categoria com botões"</code></pre>
+                </div>
+            </article>
+
+            <article class="accordion-item">
+                <h3 class="accordion-title">Boas práticas de JavaScript</h3>
+                <div class="accordion-body">
+                    <ul>
+                        <li>Prefira funções puras e evite efeitos colaterais quando possível.</li>
+                        <li>Nomes claros para funções e variáveis; trate erros com try/catch.</li>
+                        <li>Modularize código e documente responsabilidades dos módulos.</li>
+                    </ul>
+                    <pre><code>function soma(a,b) { return a + b } // função pura</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section class="checklist container">
+            <h3>Checklist pessoal</h3>
+            <ul id="personalChecklist">
+                <li><label><input type="checkbox" data-key="landmarks"> Landmarks e semântica</label></li>
+                <li><label><input type="checkbox" data-key="responsive"> Layout responsivo</label></li>
+                <li><label><input type="checkbox" data-key="accessibility"> Contrast & labels</label></li>
+            </ul>
+            <div>Progresso: <span id="checkProgress">0%</span></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guia Dev Web. Todos os direitos reservados.</p>
+            <div class="theme-switch">
+                <button id="themeToggle">Alternar Tema</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

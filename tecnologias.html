@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias — Guia Profissional de Desenvolvimento Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Guia Profissional de Desenvolvimento Web — Tiago Barbosa</h1>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Panorama de Tecnologias Web</h2>
+                <p>Esta página explica, em linguagem simples, as tecnologias mais usadas: o que são, para que servem e quando você pode escolher cada uma.</p>
+                <p>Dica: use os botões para filtrar por categoria ou a busca para encontrar uma tecnologia específica.</p>
+            </div>
+        </section>
+
+        <section class="controls container">
+            <div class="filters">
+                <label>Filtrar por categoria:</label>
+                <div class="filter-buttons" role="toolbar" aria-label="Filtro por categoria">
+                    <button class="filter-button active" data-filter="all" aria-pressed="true">Todas</button>
+                    <button class="filter-button" data-filter="frontend">Front-end</button>
+                    <button class="filter-button" data-filter="backend">Back-end</button>
+                    <button class="filter-button" data-filter="db">Bancos</button>
+                    <button class="filter-button" data-filter="devops">DevOps</button>
+                    <button class="filter-button" data-filter="testes">Testes</button>
+                </div>
+                <button id="exportCsv" class="export-button" aria-label="Exportar tecnologias filtradas">Exportar CSV</button>
+            </div>
+            <div class="search">
+                <label for="techSearch" class="visually-hidden">Buscar tecnologias</label>
+                <input id="techSearch" placeholder="Buscar... (pressione '/')" />
+            </div>
+        </section>
+
+        <section class="cards container" id="techGrid" aria-live="polite">
+            <!-- Cards serão renderizados por JS -->
+        </section>
+
+        <div id="techModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Fechar">×</button>
+                <h3 id="modalTitle"></h3>
+                <p id="modalBody"></p>
+                <ul id="modalList"></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guia Dev Web. Todos os direitos reservados.</p>
+            <div class="theme-switch">
+                <button id="themeToggle">Alternar Tema</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

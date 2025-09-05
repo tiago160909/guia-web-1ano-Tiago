@@ -1,10 +1,10 @@
 :root {
     /* Cores */
-    --primary: #2563eb;
-    --secondary: #3b82f6;
-    --background: #ffffff;
-    --text: #1f2937;
-    --card-bg: #f3f4f6;
+    --primary: #7C4A2E; /* vinho */
+    --secondary: #D6C2AE; /* bege claro */
+    --background: #FBF7F3; /* bege puro */
+    --text: #2B1B17; /* texto escuro */
+    --card-bg: #F3EDE9; /* leve contraste */
     
     /* Tipografia */
     --font-heading: 'Poppins', sans-serif;
@@ -13,9 +13,11 @@
 
 /* Tema escuro */
 body.dark {
-    --background: #1f2937;
-    --text: #f3f4f6;
-    --card-bg: #374151;
+    --primary: #2563eb; /* azul */
+    --secondary: #3b82f6;
+    --background: #0b1220; /* fundo bem escuro */
+    --text: #e6eefc; /* texto claro */
+    --card-bg: #111827; /* cinza escuro */
 }
 
 /* Reset e estilos base */
@@ -192,3 +194,72 @@ footer .container {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* Acessibilidade */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* Highlights / CTAs */
+.highlights { padding: 40px 0; text-align: center }
+.cta-row { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem }
+
+/* Modal */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); align-items: center; justify-content: center; }
+.modal[aria-hidden="false"] { display: flex }
+.modal-content { background: var(--background); color: var(--text); padding: 1.5rem; border-radius: 8px; max-width: 640px; width: 100%; box-shadow: 0 6px 18px rgba(0,0,0,0.2) }
+.modal-close { float: right; background: none; border: none; font-size: 1.25rem; cursor: pointer }
+
+/* Accordion */
+.accordion { padding: 40px 0 }
+.accordion-item { border-bottom: 1px solid var(--card-bg); }
+.accordion-title { cursor: pointer; padding: 1rem 0; font-family: var(--font-heading); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+.accordion-item.open .accordion-body { max-height: 400px; padding-bottom: 1rem }
+
+/* Checklist */
+.checklist { padding: 24px 0 }
+
+/* Flow / timeline */
+.flow { padding: 40px 0 }
+.flow-box { fill: var(--primary); rx: 6 }
+.timeline { display:flex; gap:1rem; margin-top: 1rem; overflow-x:auto }
+.timeline-step { padding: .5rem 1rem; background: var(--card-bg); border-radius: 6px }
+.tooltip { display:none; position: absolute; background: var(--background); color: var(--text); padding: .5rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15) }
+.tooltip.show { display:block }
+
+/* Quiz */
+.quiz { padding: 40px 0 }
+#questionBox { font-weight:600; margin-bottom:1rem }
+#answersBox { display:flex; flex-direction:column; gap:.75rem }
+
+/* Favoritos badge (small) */
+.fav { float:right; cursor:pointer }
+
+/* Focus styles visíveis */
+a:focus, button:focus, input:focus { outline: 3px solid rgba(37,99,235,0.25); outline-offset:2px }
+
+@media (max-width: 600px) {
+    .hero h2 { font-size: 1.6rem }
+    .cards .container { grid-template-columns: 1fr }
+    .cta-row { flex-direction: column }
+}
+
+/* Filter buttons */
+.filter-buttons { display:flex; gap: .5rem; flex-wrap:wrap; margin: .5rem 0 }
+.filter-button { background: transparent; border: 1px solid var(--card-bg); padding: .5rem .75rem; border-radius: 999px; cursor: pointer; transition: all .18s ease; color: var(--text) }
+.filter-button:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(37,99,235,0.08) }
+.filter-button.active { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; border-color: transparent }
+
+/* Tech card tweaks */
+.tech-card { position: relative }
+.tech-card .fav { background: none; border: none; font-size: 1.1rem; color: #f59e0b }
+.tech-card .detail { margin-top: .5rem }
+
+/* Export button matching filter buttons */
+.export-button { padding: .5rem .9rem; border-radius: 999px; border: none; cursor: pointer; background: linear-gradient(90deg,var(--primary),var(--secondary)); color:#fff; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.export-button:hover { transform: translateY(-3px) }
